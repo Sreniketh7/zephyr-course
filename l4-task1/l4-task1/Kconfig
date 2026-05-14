@@ -1,0 +1,8 @@
+menuconfig APP_HEARTBEAT_PERIOD_MS
+    int "Heartbeat LED period in milliseconds"
+    default 500
+    range 100 2000
+    help
+      Duration (in ms) for each ON/OFF phase of the heartbeat LED.
+
+source "Kconfig.zephyr"
