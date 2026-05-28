@@ -1,0 +1,42 @@
+[00:00:03.000,000] <inf> our_driver: channel_get: LED OFF
+blink_count: 3
+[00:00:04.000,000] <inf> our_driver: sample_fetch: LED ON
+[00:00:05.000,000] <inf> our_driver: channel_get: LED OFF
+blink_count: 4
+[00:00:06.001,000] <inf> our_driver: sample_fetch: LED ON
+[00:00:07.001,000] <inf> our_driver: channel_get: LED OFF
+blink_count: 5
+[00:00:08.001,000] <inf> our_driver: sample_fetch: LED ON
+[00:00:09.001,000] <inf> our_driver: channel_get: LED OFF
+blink_count: 6
+[00:00:10.001,000] <inf> our_driver: sample_fetch: LED ON
+[00:00:11.001,000] <inf> our_driver: channel_get: LED OFF
+blink_count: 7
+[00:00:12.001,000] <inf> our_driver: sample_fetch: LED ON
+[00:00:13.002,000] <inf> our_driver: channel_get: LED OFF
+blink_count: 8
+[00:00:14.002,000] <inf> our_driver: sample_fetch: LED ON
+[00:00:15.002,000] <inf> our_driver: channel_get: LED OFF
+blink_count: 9
+[00:00:16.002,000] <inf> our_driver: sample_fetch: LED ON
+[00:00:17.002,000] <inf> our_driver: channel_get: LED OFF
+blink_count: 10
+[00:00:18.002,000] <inf> our_driver: sample_fetch: LED ON
+[00:00:19.003,000] <inf> our_driver: channel_get: LED OFF
+blink_count: 11
+[00:00:20.003,000] <inf> our_driver: sample_fetch: LED ON
+[00:00:21.003,000] <inf> our_driver: channel_get: LED OFF
+blink_count: 12
+[00:00:22.003,000] <inf> our_driver: sample_fetch: LED ON
+[00:00:23.003,000] <inf> our_driver: channel_get: LED OFF
+blink_count: 13
+[00:00:24.003,000] <inf> our_driver: sample_fetch: LED ON
+[00:00:25.003,000] <inf> our_driver: channel_get: LED OFF
+blink_count: 14
+[00:00:26.004,000] <inf> our_driver: sample_fetch: LED ON
+[00:00:27.004,000] <inf> our_driver: channel_get: LED OFF
+blink_count: 15
+[00:00:28.004,000] <inf> our_driver: sample_fetch: LED ON
+[00:00:29.004,000] <inf> our_driver: channel_get: LED OFF
+blink_count: 16
+[00:00:30.004,000] <inf> our_driver: sample_fetch: LED ON

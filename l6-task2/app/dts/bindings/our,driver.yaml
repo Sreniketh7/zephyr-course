@@ -1,0 +1,8 @@
+description : Our Simple On Board LED Driver
+compatible  : "our,driver"
+include     : base.yaml  #We have the "status" and "compatible" properties in base.yaml, 
+                         #so we include it here to avoid repeating those properties in our driver binding file.
+properties:
+  gpios:
+    type: phandle-array
+    required: true
