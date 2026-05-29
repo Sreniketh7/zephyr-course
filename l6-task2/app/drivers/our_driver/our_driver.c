@@ -8,7 +8,27 @@
 
 LOG_MODULE_REGISTER(our_driver, LOG_LEVEL_INF);
 
-/* sample_fetch -> LED ON */
+/* l6-task2: custom API implementation */
+static int set_blink_count_impl(const struct device *dev, uint32_t count)
+{
+    if (dev == NULL) {
+        return -EINVAL;
+    }
+
+    struct our_driver_data *data = (struct our_driver_data *)dev->data;
+
+    if (data->blink_count == OUR_DRIVER_BLINK_COUNT_MAX) {
+        LOG_WRN("blink_count at max, resetting to 0");
+        data->blink_count = 0U;
+        return -EOVERFLOW;
+    }
+
+    data->blink_count = count;
+    printk("blink_count: %u\n", data->blink_count);
+    return 0;
+}
+
+/* l6-task1: sample_fetch -> LED ON */
 static int our_driver_sample_fetch(const struct device *dev,
                                     enum sensor_channel chan)
 {
@@ -17,7 +37,7 @@ static int our_driver_sample_fetch(const struct device *dev,
     return gpio_pin_set_dt(&data->led, 1);
 }
 
-/* channel_get -> LED OFF */
+/* l6-task1: channel_get -> LED OFF */
 static int our_driver_channel_get(const struct device *dev,
                                    enum sensor_channel chan,
                                    struct sensor_value *val)
@@ -46,9 +66,13 @@ static int our_driver_init(const struct device *dev)
     return 0;
 }
 
-static const struct sensor_driver_api our_driver_api = {
-    .sample_fetch = our_driver_sample_fetch,
-    .channel_get  = our_driver_channel_get,
+/* Unified vtable — sensor API embedded as first member */
+static const struct our_driver_api our_api = {
+    .sensor = {
+        .sample_fetch = our_driver_sample_fetch,
+        .channel_get  = our_driver_channel_get,
+    },
+    .set_blink_count = set_blink_count_impl,
 };
 
 static struct our_driver_data our_driver_data_0;
@@ -56,4 +80,4 @@ static struct our_driver_data our_driver_data_0;
 DEVICE_DT_INST_DEFINE(0, our_driver_init, NULL,
     &our_driver_data_0, NULL,
     POST_KERNEL, 80,
-    &our_driver_api);
+    &our_api);
