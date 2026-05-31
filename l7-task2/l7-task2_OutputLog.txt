@@ -1,0 +1,28 @@
+[00:00:00.000,000] <inf> our_driver: our_driver initialized
+*** Booting Zephyr OS build v4.4.0-1647-g29d97bdaf61b ***
+[00:00:01.000,000] <inf> main: our_driver ready — available shell commands:
+[00:00:01.000,000] <inf> main:   sensor set          set blink count
+[00:00:01.000,000] <inf> main:   sensor fetch        start blink sequence (non-blocking)
+[00:00:01.000,000] <inf> main:   sensor read         stop blink + LED OFF immediately
+[00:00:01.000,000] <inf> main:   sensor info         print device name and ready state
+uart:~$ sensor get 
+sensor - Commands for our_driver sensor
+Subcommands:
+  fetch  : Start non-blocking blink sequence
+  read   : Stop blink + force LED OFF
+  info   : Print device name and ready state
+  set    : Set blink count <value>
+uart:~$ sensor info
+device name  : our_driver
+device ready : yes
+uart:~$ sensor set 100
+blink_count set to 100
+[00:00:28.780,000] <inf> our_driver: blink_count set to 100
+uart:~$ sensor fetch
+fetch OK — blink sequence started
+[00:00:39.931,000] <inf> our_driver: sample_fetch: starting non-blocking blink
+uart:~$ sensor read
+read OK — LED OFF (blink stopped if running)
+val1 (blink_count): 100  val2: 0
+[00:00:44.179,000] <inf> our_driver: channel_get: LED OFF (blink cancelled if running)
+uart:~$ 
