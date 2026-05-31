@@ -1,0 +1,53 @@
+Welcome to minicom 2.9
+
+OPTIONS: I18n 
+Port /dev/ttyACM0, 14:24:08
+
+Press CTRL-A Z for help on special keys
+
+blink_count: 212
+[00:05:16.563,000] <inf> our_driver: sample_fetch: LED ON
+[00:05:17.063,000] <inf> our_driver: channel_get: LED OFF
+blink_count: 213
+[00:05:18.064,000] <inf> our_driver: sample_fetch: LED ON
+[00:05:18.564,000] <inf> our_driver: channel_get: LED OFF
+uart:~$ sensor read
+read OK — LED OFF
+val1: 0  val2: 0
+blink_count: 214
+[00:05:19.564,000] <inf> our_driver: sample_fetch: LED ON                                                                              
+[00:05:20.064,000] <inf> our_driver: channel_get: LED OFF                                                                              
+[00:05:20.454,000] <inf> our_driver: channel_get: LED OFF                                                                              
+blink_count: 215                                                                                                                       
+[00:05:21.064,000] <inf> our_driver: sample_fetch: LED ON                                                                              
+[00:05:21.564,000] <inf> our_driver: channel_get: LED OFF                                                                              
+blink_count: 216                                                                                                                       
+[00:05:22.565,000] <inf> our_driver: sample_fetch: LED ON                                                                              
+[00:05:23.065,000] <inf> our_driver: channel_get: LED OFF                                                                              
+blink_count: 217                                                                                                                       
+[00:05:24.065,000] <inf> our_driver: sample_fetch: LED ON                                                                              
+[00:05:24.565,000] <inf> our_driver: channel_get: LED OFF                                                                              
+uart:~$ sensor fetch                                                                                                                   
+fetch OK — LED ON                                                                                                                      
+blink_count: 218                                                                                                                       
+[00:05:25.565,000] <inf> our_driver: sample_fetch: LED ON                                                                              
+[00:05:25.811,000] <inf> our_driver: sample_fetch: LED ON                                                                              
+[00:05:26.065,000] <inf> our_driver: channel_get: LED OFF                                                                              
+uart:~$ sensor info                                                                                                                    
+device name  : our_driver                                                                                                              
+device ready : yes                                                                                                                     
+blink_count: 219                                                                                                                       
+[00:05:27.065,000] <inf> our_driver: sample_fetch: LED ON                                                                              
+[00:05:27.566,000] <inf> our_driver: channel_get: LED OFF                                                                              
+blink_count: 220                                                                                                                       
+[00:05:28.566,000] <inf> our_driver: sample_fetch: LED ON                                                                              
+[00:05:29.066,000] <inf> our_driver: channel_get: LED OFF                                                                              
+blink_count: 221                                                                                                                       
+[00:05:30.066,000] <inf> our_driver: sample_fetch: LED ON                                                                              
+[00:05:30.566,000] <inf> our_driver: channel_get: LED OFF                                                                              
+uart:~$ sensor                                                                                                                         
+sensor - Commands for our_driver sensor                                                                                                
+Subcommands:                                                                                                                           
+  fetch  : Call sensor_sample_fetch — turns LED ON                                                                                     
+  read   : Call sensor_channel_get — turns LED OFF                                                                                     
+  info   : Print device name and ready state                                                                                           

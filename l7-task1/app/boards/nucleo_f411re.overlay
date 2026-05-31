@@ -1,0 +1,15 @@
+/{
+    leds{
+        green_led_2: led_2 {
+            gpios = <&gpioa 5 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};
+
+/{
+    our_driver: our_driver {
+        compatible = "our,driver";
+        gpios = <&gpioa 5 GPIO_ACTIVE_HIGH>;
+        status = "okay";  // Generates the Kconfig option [if "disabled"], this config doesnt work
+    };
+};
